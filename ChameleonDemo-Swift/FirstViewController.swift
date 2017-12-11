@@ -45,6 +45,9 @@ class FirstViewController: UITableViewController {
         
         // Hide nav bar hairline
         self.navigationController?.hidesNavigationBarHairline = true
+        
+        self.navigationController?.setStatusBarStyle(UIStatusBarStyleContrast)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +57,8 @@ class FirstViewController: UITableViewController {
     
     // MARK: Chameleon related
     func initChameleonColors() {
+        
+        self.setStatusBarStyle(UIStatusBarStyleContrast)
         
         let randomFlatColor = UIColor.randomFlat
         let randomFlatColorContract = ContrastColorOf(randomFlatColor, returnFlat: true)
