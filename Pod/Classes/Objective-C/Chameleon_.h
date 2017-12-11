@@ -63,4 +63,7 @@
                     usingFontName:(NSString *)fontName
                   andContentStyle:(UIContentStyle)contentStyle;
 
++ (nullable UIColor *)primaryColor;
++ (nullable UIColor *)secondaryColor;
++ (UIContentStyle)contentStyle;
 @end

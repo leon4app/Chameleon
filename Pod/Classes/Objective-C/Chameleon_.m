@@ -11,6 +11,10 @@
 #import "UIButton+Chameleon.h"
 #import "UIAppearance+Swift.h"
 
+static UIColor *_primaryColor;
+static UIColor *_secondaryColor;
+static UIContentStyle _contentStyle;
+
 @implementation Chameleon
 
 #pragma GCC diagnostic push
@@ -49,6 +53,9 @@
     [[self class] customizeTabBarWithBarTintColor:FlatWhite andTintColor:primaryColor];
     [[self class] customizeToolbarWithPrimaryColor:primaryColor withContentStyle:contentStyle];
     [[self class] customizeImagePickerControllerWithPrimaryColor:primaryColor withContentStyle:contentStyle];
+    
+    _primaryColor = primaryColor;
+    _contentStyle = contentStyle;
 }
 
 
@@ -86,6 +93,10 @@
     [[self class] customizeTabBarWithBarTintColor:FlatWhite andTintColor:primaryColor];
     [[self class] customizeToolbarWithPrimaryColor:primaryColor withContentStyle:contentStyle];
     [[self class] customizeImagePickerControllerWithPrimaryColor:primaryColor withContentStyle:contentStyle];
+    
+    _primaryColor = primaryColor;
+    _secondaryColor = secondaryColor;
+    _contentStyle = contentStyle;
 }
 
 + (void)setGlobalThemeUsingPrimaryColor:(UIColor *)primaryColor
@@ -127,6 +138,9 @@
     [[self class] customizeToolbarWithPrimaryColor:primaryColor withContentStyle:contentStyle];
     [[self class] customizeImagePickerControllerWithPrimaryColor:primaryColor withContentStyle:contentStyle];
     
+    _primaryColor = primaryColor;
+    _secondaryColor = secondaryColor;
+    _contentStyle = contentStyle;
     /*
      
      if (contentStyle == UIContentStyleContrast) {
@@ -786,6 +800,18 @@
     [[UIToolbar appearance] setTintColor:contentColor];
     [[UIToolbar appearance] setBarTintColor:primaryColor];
     [[UIToolbar appearance] setClipsToBounds:YES];
+}
+
++ (nullable UIColor *)primaryColor {
+    return _primaryColor;
+}
+
++ (nullable UIColor *)secondaryColor {
+    return _secondaryColor;
+}
+
++ (UIContentStyle)contentStyle {
+    return _contentStyle;
 }
 
 #pragma GCC diagnostic pop
