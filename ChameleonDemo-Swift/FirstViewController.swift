@@ -50,11 +50,6 @@ class FirstViewController: UITableViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-//        initChameleonColors()
-    }
-    
-    
     // MARK: Chameleon related
     func initChameleonColors() {
         

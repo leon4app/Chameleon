@@ -802,6 +802,7 @@ static UIContentStyle _contentStyle;
     [[UIToolbar appearance] setClipsToBounds:YES];
 }
 
+#pragma mark - getter
 + (nullable UIColor *)primaryColor {
     return _primaryColor;
 }
